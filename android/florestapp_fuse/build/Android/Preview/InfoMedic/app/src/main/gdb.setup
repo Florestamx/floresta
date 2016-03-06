@@ -1,0 +1,4 @@
+directory jni;include;C:/ProgramData/Uno/Packages/Fuse.Scripting.V8/0.24.7;C:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/include;C:/Users/mmoraf/AppData/Local/Fusetools/Fuse/Android/AndroidNDK/platforms/android-19/arch-arm/usr/include;C:/Users/mmoraf/AppData/Local/Fusetools/Fuse/Android/AndroidNDK/sources/cxx-stl/stlport/stlport;C:/Users/mmoraf/AppData/Local/Fusetools/Fuse/Android/AndroidNDK/sources/cxx-stl/gabi++/include
+set solib-search-path .uno;C:/ProgramData/Uno/Packages/Fuse.Scripting.V8/0.24.7/lib/Android;C:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/lib/armeabi-v7a;C:/Users/mmoraf/AppData/Local/Fusetools/Fuse/Android/AndroidNDK/sources/cxx-stl/stlport/libs/armeabi-v7a
+sharedlibrary
+set auto-solib-add on

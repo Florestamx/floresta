@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FlorestaApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="textFloresta">FLORESTA</string>
+    <string name="Accso">ACCESO A TU CUENTA</string>
+    <string name="noCuenta">Aun no tienes Cuenta</string>
+    <string name="registroA">Registrate Aqui</string>
+    <string name="title_activity_mapa">Map</string>
+    <string name="overlay_label">Food</string>
+    <string name="access_label">Access</string>
+    <string name="route_label">Route</string>
+    <string name="title_activity_check">Map</string>
+    <string name="title_activity_reportar">Map</string>
+    <string name="Inicio_Sesion">Inicio Sesion</string>
+</resources>

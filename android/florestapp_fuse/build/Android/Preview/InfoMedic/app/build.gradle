@@ -1,0 +1,96 @@
+// This file was generated based on 'C:\ProgramData\Uno\Packages\UnoCore\0.24.5\Targets\CPlusPlus\Android@(Project.Name)\app\build.gradle'.
+// WARNING: Changes might be lost if you edit this file directly.
+apply plugin: 'com.android.model.application'
+
+//#if #(Gradle.Dependencies.Compile:IsRequired)
+//dependencies {
+//    #(Gradle.Dependencies.Compile:Join('\n', 'compile \'', '\''))
+//}
+//#endif
+
+model {
+    repositories {
+        libs(PrebuiltLibraries) {
+            prebuilt {
+                binaries.withType(SharedLibraryBinary) {
+                    //
+                    // NOTE: this block should be "StaticLibraryBinary"/staticLibraryFile - but SharedLibraryBinary works and StaticLibraryBinary doesn't as of 0.6.0-alpha2
+                    // bug reported here: https://code.google.com/p/android/issues/detail?id=196065
+                    //
+                    sharedLibraryFile = file("C:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/lib/armeabi-v7a/libXli.a")
+                    sharedLibraryFile = file("C:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/lib/armeabi-v7a/libXliFont.a")
+                    sharedLibraryFile = file("C:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/lib/armeabi-v7a/libXliGL.a")
+                    sharedLibraryFile = file("C:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/lib/armeabi-v7a/libXliImage.a")
+                    sharedLibraryFile = file("C:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/lib/armeabi-v7a/libXliMain.a")
+                    sharedLibraryFile = file("C:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/lib/armeabi-v7a/libXliPlatform.a")
+                    sharedLibraryFile = file("C:/ProgramData/Uno/Packages/Fuse.Scripting.V8/0.24.7/lib/Android/libV8Simple.so")
+                    sharedLibraryFile = file("C:/Users/mmoraf/AppData/Local/Fusetools/Fuse/Android/AndroidNDK/sources/cxx-stl/stlport/libs/armeabi-v7a/libstlport_shared.so")
+                }
+            }
+        }
+    }
+
+    android {
+        compileSdkVersion = 23 //21
+        buildToolsVersion = "23.0.0"
+
+        defaultConfig.with {
+            applicationId = "com.InfoMedic"
+            minSdkVersion.apiLevel = 10
+            targetSdkVersion.apiLevel = 21
+            versionCode = 0
+            versionName = "0.0.0"
+        }
+    }
+
+//#if #(Project.Android.Key.Store:IsSet)
+//    android.signingConfigs {
+//        create("release") {
+//            keyAlias = "#(Project.Android.Key.Alias)"
+//            keyPassword = "#(Project.Android.Key.AliasPassword)"
+//            storeFile = file("#(Project.Android.Key.Store:Path)")
+//            storePassword = "#(Project.Android.Key.StorePassword)"
+//        }
+//    }
+//#endif
+
+    android.ndk {
+        moduleName = "InfoMedic"
+        debuggable = true
+        platformVersion = 9
+        CFlags.addAll(["-std=c99"])
+        CFlags.addAll(["-IC:/Users/mmoraf/Desktop/InfoMedic/InfoMedic/build/Android/Preview/InfoMedic/app/src/main/include", "-IC:/ProgramData/Uno/Packages/Fuse.Scripting.V8/0.24.7", "-IC:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/include"])
+        CFlags.addAll(["-DDUK_F_32BIT_PTRS", "-DDUK_F_USE_REPL_ALL"])
+        cppFlags.addAll(["-std=c++11", "-fexceptions", "-frtti", "-Wno-invalid-offsetof"])
+        cppFlags.addAll(["-IC:/Users/mmoraf/Desktop/InfoMedic/InfoMedic/build/Android/Preview/InfoMedic/app/src/main/include", "-IC:/ProgramData/Uno/Packages/Fuse.Scripting.V8/0.24.7", "-IC:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/include"])
+        cppFlags.addAll(["-DDUK_F_32BIT_PTRS", "-DDUK_F_USE_REPL_ALL"])
+        ldFlags.addAll(["-LC:/ProgramData/Uno/Packages/Fuse.Scripting.V8/0.24.7/lib/Android", "-LC:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/lib/armeabi-v7a", "-LC:/Users/mmoraf/AppData/Local/Fusetools/Fuse/Android/AndroidNDK/sources/cxx-stl/stlport/libs/armeabi-v7a"])
+        ldLibs.addAll(["android", "EGL", "GLESv2", "log", "stlport_shared", "V8Simple", "Xli", "XliFont", "XliGL", "XliImage", "XliMain", "XliPlatform", "z"])
+        stl = "stlport_shared"
+    }
+
+    android.sources {
+        main {
+            jni {
+                dependencies {
+                    library "prebuilt"
+                }
+            }
+        }
+    }
+
+    android.buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles.add(file('proguard-rules.txt'))
+        }
+    }
+
+    android.productFlavors {
+        // for detailed abiFilter descriptions, refer to "Supported ABIs" @
+        // https://developer.android.com/ndk/guides/abis.html#sa
+        create("arm7") {
+            ndk.abiFilters.add("armeabi-v7a")
+        }
+    }
+}

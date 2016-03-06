@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:57
+-keep class com.InfoMedic.Android_android_app_Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:29
+-keep class com.InfoMedic.InfoMedic { <init>(...); }
+

@@ -1,0 +1,7 @@
+/Users/oscarbeltran/Library/Application Support/Fusetools/Fuse/Android/AndroidNDK
+9
+armeabi-v7a
+-O3 -g -DNDEBUG
+ -DDUK_F_32BIT_PTRS -DDUK_F_USE_REPL_ALL
+ -I/usr/local/share/uno/Packages/Fuse.Scripting.V8/0.24.6 -I/usr/local/share/uno/Packages/UnoCore/0.24.3/Targets/CPlusPlus/Prebuilt/Android/include
+/Users/oscarbeltran/Library/Application Support/Fusetools/Fuse/Android/AndroidNDK/sources/cxx-stl/stlport/stlport

@@ -1,0 +1,7 @@
+C:/Users/mmoraf/AppData/Local/Fusetools/Fuse/Android/AndroidNDK
+9
+armeabi-v7a
+-O3 -g -DNDEBUG
+ -DDUK_F_32BIT_PTRS -DDUK_F_USE_REPL_ALL
+ -IC:/ProgramData/Uno/Packages/Fuse.Scripting.V8/0.24.7 -IC:/ProgramData/Uno/Packages/UnoCore/0.24.5/Targets/CPlusPlus/Prebuilt/Android/include
+C:/Users/mmoraf/AppData/Local/Fusetools/Fuse/Android/AndroidNDK/sources/cxx-stl/stlport/stlport

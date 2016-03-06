@@ -1,0 +1,42 @@
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.floresta.florestaapp.mapaActivity" >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="horizontal"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:padding="0px"
+    >
+
+<Button android:id="@+id/doOverlay"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30px"
+    android:layout_weight="1.0"
+    android:textSize="12sp"
+    android:text="@string/overlay_label" />
+
+<Button android:id="@+id/doAccess"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.0"
+    android:textSize="12sp"
+    android:text="@string/access_label" />
+
+<Button android:id="@+id/doRoute"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="30px"
+    android:layout_weight="1.0"
+    android:textSize="12sp"
+    android:text="@string/route_label" />
+
+</LinearLayout>
+
+    </fragment>

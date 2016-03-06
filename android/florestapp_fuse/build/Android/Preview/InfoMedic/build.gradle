@@ -1,0 +1,18 @@
+// This file was generated based on 'C:\ProgramData\Uno\Packages\UnoCore\0.24.5\Targets\CPlusPlus\Android@(Project.Name)\build.gradle'.
+// WARNING: Changes might be lost if you edit this file directly.
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+       jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle-experimental:0.6.0-alpha2'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}

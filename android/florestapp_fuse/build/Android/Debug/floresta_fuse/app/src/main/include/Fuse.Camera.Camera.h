@@ -1,0 +1,26 @@
+// This file was generated based on '/usr/local/share/uno/Packages/Fuse.Camera/0.24.6/$.uno'.
+// WARNING: Changes might be lost if you edit this file directly.
+
+#pragma once
+#include <Uno.h>
+namespace g{namespace Fuse{namespace Camera{struct Camera;}}}
+namespace g{namespace Fuse{namespace Camera{struct PictureResult;}}}
+namespace g{namespace Fuse{namespace Camera{struct TakePictureOptions;}}}
+namespace g{namespace Uno{namespace Threading{struct Future1;}}}
+
+namespace g{
+namespace Fuse{
+namespace Camera{
+
+// public static class Camera :106
+// {
+uClassType* Camera_typeof();
+void Camera__TakePicture1_fn(::g::Fuse::Camera::TakePictureOptions* options, ::g::Uno::Threading::Future1** __retval);
+
+struct Camera : uObject
+{
+    static ::g::Uno::Threading::Future1* TakePicture1(::g::Fuse::Camera::TakePictureOptions* options);
+};
+// }
+
+}}} // ::g::Fuse::Camera

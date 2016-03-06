@@ -1,0 +1,38 @@
+// This file was generated based on '/usr/local/share/uno/Packages/Fuse.Reactive/0.24.6/FuseJS/$.uno'.
+// WARNING: Changes might be lost if you edit this file directly.
+
+#pragma once
+#include <Uno.Object.h>
+namespace g{namespace Fuse{namespace Reactive{namespace FuseJS{struct TimerManager;}}}}
+namespace g{namespace Fuse{namespace Reactive{namespace FuseJS{struct TimerManager__Timer;}}}}
+namespace g{namespace Uno{namespace Collections{struct List;}}}
+
+namespace g{
+namespace Fuse{
+namespace Reactive{
+namespace FuseJS{
+
+// internal sealed class TimerManager :544
+// {
+uType* TimerManager_typeof();
+void TimerManager__ctor__fn(TimerManager* __this);
+void TimerManager__AddTimer_fn(TimerManager* __this, double* ms, uDelegate* callback, bool* repeat, int* __retval);
+void TimerManager__DeleteTimer_fn(TimerManager* __this, int* id, bool* __retval);
+void TimerManager__GetTimer_fn(TimerManager* __this, int* id, TimerManager__Timer** __retval);
+void TimerManager__New1_fn(TimerManager** __retval);
+void TimerManager__RemoveTimer_fn(TimerManager* __this, int* id);
+
+struct TimerManager : uObject
+{
+    uStrong< ::g::Uno::Collections::List*> _timers;
+
+    void ctor_();
+    int AddTimer(double ms, uDelegate* callback, bool repeat);
+    bool DeleteTimer(int id);
+    TimerManager__Timer* GetTimer(int id);
+    void RemoveTimer(int id);
+    static TimerManager* New1();
+};
+// }
+
+}}}} // ::g::Fuse::Reactive::FuseJS

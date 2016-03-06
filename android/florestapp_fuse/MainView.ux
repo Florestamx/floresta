@@ -1,0 +1,138 @@
+<App Theme="Basic" ClearColor="#2FAB66">
+	<iOS.StatusBarConfig Style="Light" />
+
+	<DockPanel>
+		<Style>
+			<Text TextColor="#585858" />
+			<TextInput PlaceholderColor="#C4C0CD" TextColor="#585858" CaretColor="#585858" />
+		</Style>
+
+		<!-- Button colors -->
+		<float4 ux:Key="C600" ux:Value="#E1910D" />
+		<float4 ux:Key="C700" ux:Value="#262022" />
+		<float4 ux:Key="CFillFore" ux:Value="#75707D" />
+
+		<StatusBarBackground Dock="Top" />
+		<BottomBarBackground Dock="Bottom" />
+
+		<JavaScript>
+			var Observable = require("FuseJS/Observable");
+			var env = require('FuseJS/Environment');
+			var GeoLocation = require("FuseJS/GeoLocation");
+
+			 
+
+			var currentPage = Observable("page1");
+			var username = Observable("");
+			var password = Observable("");
+
+			var immediateLocation = JSON.stringify(GeoLocation.location);
+
+			var areCredentialsValid = Observable(function() {
+				return username.value != "" && password.value != "";
+			});
+
+   
+			function goToPage2() {
+			
+
+				if(username.value == "floresta" && password.value=="admin")
+				{ immediateLocation = JSON.stringify(GeoLocation.location);
+					if (env.mobile) {
+        	    		debug_log("Init geo.");
+        			}
+        			else {
+            			debug_log("Not on mobile, so we don't have geo");
+        			}
+
+					currentPage.value="page2";
+				}	
+				/*else
+				{
+					currentPage.value="page3" ;
+				}*/
+			}   
+
+			function goToPage1() {
+				currentPage.value="page1";
+			}
+
+			function goToRegistro() {
+				currentPage.value="registro";
+			}
+
+			module.exports = {
+
+				currentPage: currentPage,
+				username: username,
+				password: password,
+				immediateLocation: immediateLocation,
+
+				areCredentialsValid: areCredentialsValid,
+				goToPage2: goToPage2,
+				goToPage1: goToPage1,
+				goToRegistro: goToRegistro
+			
+			
+
+			};
+		</JavaScript>
+
+		<PageControl Active="{currentPage}">
+
+			<!-- PANTALLA 1 -->
+			<Page ux:Name="page1">
+				<Grid Rows="1*,1*">
+					<StackPanel Alignment="VerticalCenter" Margin="50,130,50,0">
+						<TextInput Row="0" PlaceholderText="usuario" Value="{username}"/>
+						<TextInput Row="1" PlaceholderText="contraseña" IsPassword="true" Value="{password}"/>
+					</StackPanel>
+					<StackPanel Alignment="VerticalCenter">
+						
+						<Image File="Assets/floresta.png"/>
+	
+					</StackPanel>
+					<Image File="Assets/icon_principal.png"/>
+					
+					<StackPanel Alignment="VerticalCenter">
+						<Button Text="Log in" IsEnabled="{areCredentialsValid}" Clicked="{goToPage2}"/>
+					</StackPanel>
+					</Grid>
+			</Page>
+
+
+			<!-- PANTALLA 2 -->
+			<Page ux:Name="page2">
+				  <Grid>
+				  <StackPanel Alignment="VerticalCenter" Margin="50,0,50,0">	
+
+
+
+					<Text>Immediatee:</Text>
+					<Text Value="{immediateLocation}" />
+</StackPanel>
+				 
+				  </Grid>
+			</Page>
+
+
+
+
+			<!-- Pagina 3-->
+			<Page ux:Name="page3">
+				<StackPanel Alignment="VerticalCenter" Margin="50,0,50,0">
+				  <Text Alignment="HorizontalCenter" FontSize="20">Error en Credenciales</Text>
+				  <Button Text="Regresar" IsEnabled="true" Clicked="{goToPage1}" />
+				</StackPanel> 
+			</Page>
+
+			<Page ux:Name="registro">
+				  <Grid>
+				  <StackPanel Alignment="VerticalCenter" Margin="10,0,10,0">	
+				  </StackPanel>	
+				  </Grid>
+			</Page>
+		</PageControl>
+	</DockPanel>
+</App>
+
