@@ -223,6 +223,8 @@ border-radius: 10px;
 	margin:0 0 2em;
 	line-height:1.8em;
 	width:50%;
+	    margin-left: 47%;
+    text-align: justify;
 }
 .more a{
 	font-size:25px;
